@@ -18,7 +18,11 @@ class PokeCell: UICollectionViewCell {
         self.pokemon = pokemon;
         nameLabel.text = self.pokemon.name;
         thumbnailImage.image = UIImage(named: "\(self.pokemon.pokedexId)");
-        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.cornerRadius = 5;
     }
     
 }

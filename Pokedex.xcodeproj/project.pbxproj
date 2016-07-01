@@ -15,6 +15,7 @@
 		94F14A701D267893005B8EA0 /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 94F14A6F1D267893005B8EA0 /* pokemon.csv */; };
 		94F14A751D267A85005B8EA0 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F14A741D267A85005B8EA0 /* Pokemon.swift */; };
 		94F14A771D268BEE005B8EA0 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F14A761D268BEE005B8EA0 /* PokeCell.swift */; };
+		94F14A791D26AE7A005B8EA0 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F14A781D26AE7A005B8EA0 /* csv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		94F14A6F1D267893005B8EA0 /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		94F14A741D267A85005B8EA0 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		94F14A761D268BEE005B8EA0 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
+		94F14A781D26AE7A005B8EA0 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +65,10 @@
 				94F14A711D267A63005B8EA0 /* Model */,
 				94F14A721D267A6B005B8EA0 /* View */,
 				94F14A731D267A72005B8EA0 /* Controller */,
+				94F14A7B1D26AE93005B8EA0 /* Util */,
+				94F14A7A1D26AE8C005B8EA0 /* Resources */,
 				94F14A5D1D2676E3005B8EA0 /* AppDelegate.swift */,
-				94F14A5F1D2676E3005B8EA0 /* ViewController.swift */,
-				94F14A6F1D267893005B8EA0 /* pokemon.csv */,
+				94F14A781D26AE7A005B8EA0 /* csv.swift */,
 				94F14A611D2676E3005B8EA0 /* Main.storyboard */,
 				94F14A641D2676E3005B8EA0 /* Assets.xcassets */,
 				94F14A661D2676E3005B8EA0 /* LaunchScreen.storyboard */,
@@ -93,8 +96,24 @@
 		94F14A731D267A72005B8EA0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				94F14A5F1D2676E3005B8EA0 /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		94F14A7A1D26AE8C005B8EA0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94F14A6F1D267893005B8EA0 /* pokemon.csv */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		94F14A7B1D26AE93005B8EA0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				94F14A601D2676E3005B8EA0 /* ViewController.swift in Sources */,
 				94F14A5E1D2676E3005B8EA0 /* AppDelegate.swift in Sources */,
 				94F14A751D267A85005B8EA0 /* Pokemon.swift in Sources */,
+				94F14A791D26AE7A005B8EA0 /* csv.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
