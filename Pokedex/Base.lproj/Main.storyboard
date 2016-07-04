@@ -159,6 +159,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="bsj-Pk-Mm2" id="Dok-jO-gDp"/>
+                        <outlet property="pokemonSearchBar" destination="C1a-ry-PMx" id="u7Y-Fq-Wki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
