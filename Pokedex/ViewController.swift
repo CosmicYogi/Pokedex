@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
     var pokemons = [Pokemon]();
     @IBOutlet var collection: UICollectionView!
+    var musicPlayer : AVAudioPlayer! 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self;
         collection.dataSource = self;
+        playAudio();
         parsePokemonCSV();
     }
 
+    func playAudio() -> Void {
+        let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")
+        print(path);
+        do{
+            musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path!)!);
+            musicPlayer.prepareToPlay();
+            musicPlayer.numberOfLoops = -1; //because we want to play infinite times.
+            musicPlayer.play();
+        } catch let err as NSError{
+            print(err.debugDescription);
+        }
+    }
     func parsePokemonCSV(){
         if let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv"){
             do{
@@ -60,6 +76,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(105, 105)
+    }
+    @IBAction func musicButtonDown(sender: UIButton) {
+        if (musicPlayer.playing == true){
+            musicPlayer.stop();
+            sender.alpha = 0.3;
+        } else{
+            musicPlayer.play();
+            sender.alpha = 1;
+        }
     }
 }
 

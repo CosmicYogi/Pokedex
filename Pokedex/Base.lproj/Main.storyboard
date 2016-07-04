@@ -3,8 +3,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PokemonHollow.ttf">
+            <string>PokemonHollowNormal</string>
+        </mutableArray>
+        <mutableArray key="PokemonSolid.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,10 +29,47 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrD-Z1-r26">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pokédex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-Pm-BQe">
+                                        <rect key="frame" x="259" y="16" width="111" height="29"/>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="22"/>
+                                        <color key="textColor" red="0.97265625" green="0.93050240495775594" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pokédex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUp-nC-VT9">
+                                        <rect key="frame" x="259" y="16" width="111" height="29"/>
+                                        <fontDescription key="fontDescription" name="PokemonHollowNormal" family="Pokemon Hollow" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jQ-qr-kMj">
+                                        <rect key="frame" x="560" y="20" width="32" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="37" id="SJC-CN-NDA"/>
+                                            <constraint firstAttribute="height" constant="25" id="SuF-Uj-BWV"/>
+                                            <constraint firstAttribute="width" secondItem="4jQ-qr-kMj" secondAttribute="height" multiplier="37:29" id="XJ0-Ei-fLW"/>
+                                        </constraints>
+                                        <state key="normal" image="music-1"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="SJC-CN-NDA"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="musicButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fL4-Aq-XiR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.015462046922150363" blue="0.013670089910152172" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cKJ-Pm-BQe" secondAttribute="bottom" constant="8" id="ArI-Jy-pga"/>
                                     <constraint firstAttribute="height" constant="53" id="Sa5-P8-4Aj"/>
+                                    <constraint firstAttribute="bottom" secondItem="4jQ-qr-kMj" secondAttribute="bottom" constant="8" id="Sgp-Ya-UyH"/>
+                                    <constraint firstItem="cKJ-Pm-BQe" firstAttribute="centerX" secondItem="MrD-Z1-r26" secondAttribute="centerX" id="a6M-H7-oiH"/>
+                                    <constraint firstAttribute="trailing" secondItem="4jQ-qr-kMj" secondAttribute="trailing" constant="8" id="qVA-BK-Aeb"/>
+                                    <constraint firstAttribute="bottom" secondItem="PUp-nC-VT9" secondAttribute="bottom" constant="8" id="rKi-7e-Ox8"/>
+                                    <constraint firstItem="PUp-nC-VT9" firstAttribute="centerX" secondItem="MrD-Z1-r26" secondAttribute="centerX" id="rUq-2M-FeX"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="3si-pc-LH8">
@@ -106,8 +152,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="WYc-gi-B8W"/>
                                 <exclude reference="97R-Ft-uaG"/>
+                                <exclude reference="WYc-gi-B8W"/>
                             </mask>
                         </variation>
                     </view>
@@ -117,11 +163,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="368"/>
+            <point key="canvasLocation" x="331" y="366"/>
         </scene>
     </scenes>
     <resources>
         <image name="6" width="137" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music-1" width="100" height="100"/>
     </resources>
 </document>
