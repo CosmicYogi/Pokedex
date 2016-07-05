@@ -188,11 +188,30 @@
                                         <color key="textColor" red="0.9435296474358974" green="0.9435296474358974" blue="0.9435296474358974" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBv-rq-Tku">
+                                        <rect key="frame" x="8" y="16" width="47" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oBv-rq-Tku" secondAttribute="height" multiplier="47:33" id="EhH-Ch-Ajq"/>
+                                            <constraint firstAttribute="height" constant="25" id="inG-Q1-Bka"/>
+                                            <constraint firstAttribute="width" secondItem="oBv-rq-Tku" secondAttribute="height" multiplier="47:33" id="yHL-vA-rt5"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="yHL-vA-rt5"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onBackDown:" destination="9V0-No-teI" eventType="touchUpInside" id="Juh-p2-aEC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.01546204692" blue="0.013670089910000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="1LD-wc-kUq"/>
+                                    <constraint firstAttribute="bottom" secondItem="oBv-rq-Tku" secondAttribute="bottom" constant="8" id="1aE-vp-xq2"/>
+                                    <constraint firstItem="oBv-rq-Tku" firstAttribute="leading" secondItem="fJJ-gu-hTq" secondAttribute="leading" constant="8" id="fdq-aS-WZl"/>
                                     <constraint firstItem="4DE-mz-AJB" firstAttribute="centerX" secondItem="fJJ-gu-hTq" secondAttribute="centerX" id="kGI-9Z-q2y"/>
                                     <constraint firstAttribute="bottom" secondItem="4DE-mz-AJB" secondAttribute="bottom" constant="8" id="rpk-I6-cZG"/>
                                 </constraints>
@@ -346,14 +365,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hLo-yU-uIK">
                                 <rect key="frame" x="115" y="471" width="560" height="150"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="295" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-iW-NNb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="295" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-iW-NNb">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Q9e-mU-0TO"/>
                                             <constraint firstAttribute="width" constant="100" id="oS4-bg-zM2"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-No-ORX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-No-ORX">
                                         <rect key="frame" x="280" y="0.0" width="280" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="VmK-tt-aae"/>
@@ -384,7 +403,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseAttackLabel" destination="YDp-AE-B3i" id="1cV-1e-OBQ"/>
+                        <outlet property="currentEvolvingImage" destination="0CQ-iW-NNb" id="wZm-As-vjT"/>
+                        <outlet property="defenseLabel" destination="OLx-OJ-I88" id="XdH-NY-Ogh"/>
+                        <outlet property="descriptionLabel" destination="L8V-OR-00k" id="J3l-qr-NXc"/>
+                        <outlet property="evolveLabel" destination="3An-BG-gH9" id="EGD-Pi-4Az"/>
+                        <outlet property="heightLabel" destination="Lb6-Ic-SQH" id="V9g-fe-xHx"/>
+                        <outlet property="mainPokemonImage" destination="lMm-qq-PDZ" id="XgI-hT-wbP"/>
                         <outlet property="nameLabel" destination="4DE-mz-AJB" id="yAW-Ip-jZ1"/>
+                        <outlet property="nextEvolvingImage" destination="ck9-No-ORX" id="pVZ-iv-1Tz"/>
+                        <outlet property="pokedexIdLabel" destination="fjx-bL-FXe" id="Vsf-KD-NVn"/>
+                        <outlet property="typeLabel" destination="5ZT-SF-Y2q" id="c3o-v6-kPS"/>
+                        <outlet property="weightLabel" destination="Xjb-cF-G3D" id="4cf-PV-JrE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGM-Zd-omU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -397,6 +427,7 @@
         <image name="295" width="120" height="120"/>
         <image name="444" width="120" height="120"/>
         <image name="6" width="137" height="120"/>
+        <image name="back" width="100" height="67"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="music-1" width="100" height="100"/>
     </resources>

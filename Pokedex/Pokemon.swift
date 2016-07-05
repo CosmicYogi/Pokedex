@@ -9,8 +9,14 @@
 import Foundation
 class Pokemon{
     
-    private var _name : String
-    private var _pokedexId : Int
+    private var _name : String!
+    private var _pokedexId : Int!
+    private var _bio : String!
+    private var _type : String!
+    private var _defense : String!
+    private var _height : String!
+    private var _weight : String!
+    private var _baseAttack : String!
     
     init(name : String, pokedexId: Int){
         _name = name;
