@@ -72,6 +72,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        var poke : Pokemon;
+        
+        if (isSearching){
+            poke = filteredPokemons[indexPath.row];
+        } else{
+            poke = pokemons[indexPath.row];
+        }
+        performSegueWithIdentifier("pokemonDetail", sender: poke)
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell{
@@ -118,6 +126,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         collection.reloadData();
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "pokemonDetail"{
+            if let pokemonViewDetailViewController = segue.destinationViewController as? PokemonDetailVC{
+                if let poke = sender as? Pokemon{
+                    pokemonViewDetailViewController.pokemon = poke;
+                }
+            }
+        }
     }
 }
 
