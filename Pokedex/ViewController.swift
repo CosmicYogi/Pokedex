@@ -36,6 +36,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.prepareToPlay();
             musicPlayer.numberOfLoops = -1; //because we want to play infinite times.
             musicPlayer.play();
+            musicPlayer.stop(); //TEMPORARY, also remove it from function which change music item image.
         } catch let err as NSError{
             print(err.debugDescription);
         }
@@ -105,6 +106,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             sender.alpha = 0.3;
         } else{
             musicPlayer.play();
+            musicPlayer.stop(); // TEMPORARY, Also remove from playAudio() function.
             sender.alpha = 1;
         }
     }
