@@ -30,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     func playAudio() -> Void {
         let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")
-        print(path);
+        //print(path);
         do{
             musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path!)!);
             musicPlayer.prepareToPlay();
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             do{
                 let csv = try CSV(contentsOfURL: path)
                 let rows = csv.rows;
-                print(rows);
+                //print(rows);
                 for row  in rows {
                     let pokeId = Int(row["id"]!)!
                     let pokeName = row["identifier"]!

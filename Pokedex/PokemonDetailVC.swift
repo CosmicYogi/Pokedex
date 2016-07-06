@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class PokemonDetailVC: UIViewController {
 
     
@@ -28,11 +29,20 @@ class PokemonDetailVC: UIViewController {
     var pokemon : Pokemon!
     override func viewDidLoad() {
         nameLabel.text = pokemon.name;
+        
+        mainPokemonImage.image = UIImage(named: "\(pokemon.pokedexId)");
+        pokemon.downloadPokemonDetails {
+            // This will be called after download will be done.
+            
+            
+        }
     }
     
     
     @IBAction func onBackDown(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil);
     }
+    
+    
     
 }
